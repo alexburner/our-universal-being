@@ -8,9 +8,17 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prettier": "prettier --write ${GLOB:-.}",
+    "eslint": "eslint --ext .ts,.tsx --fix ${GLOB:-.}",
+    "tsc": "tsc --noEmit",
+    "fix": "npm run eslint && npm run prettier && npm run tsc"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.3.1",
+    "@typescript-eslint/parser": "5.3.1",
+    "eslint-config-prettier": "8.3.0",
+    "prettier": "2.4.1",
     "typescript": "4.4.4",
     "vite": "2.6.14"
   }
